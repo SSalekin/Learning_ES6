@@ -16,9 +16,15 @@ if(true) {
 console.log(name);
 ```
 
-In general logic, it should've printed "Sodrul" and "JOSIM", right? As, we declared name to be "JOSIM" outside the if block, we'd expect it won't change after whatever we do inside another block, right?
+In general logic, it should've printed 
+```
+Sodrul
+JOSIM
+``` 
+Correct? 
+As, we declared name to be "JOSIM" outside the if block, we'd expect it won't change after whatever we do inside another block, right?
 
-Wrong. This is one of the weired features of JS (after all, the language was written in just 2 weeks, #BRANDENISBOSS)
+Wrong !! This is one of the weired features of JS (after all, the language was written in just 2 weeks, #BRANDENISBOSS)
 
 When executed this code behaves like,
 
@@ -33,7 +39,14 @@ if(true) {
 console.log(name);
 ```
 
-and prints "Sodrul", "Sodrul" as output.
+and prints 
+
+```
+Sodrul
+Sodrul
+``` 
+
+as output.
 
 The 'let' keyword is going to fix this issue.'let' allows you to declare variables limited in scope to the block, statement or expression on which its being used. It's slightly different from the 'var' keyword, which defines variables globally (or locally to an entire function regardless of block scope).
 
@@ -84,73 +97,21 @@ Constants
 
 This might sound funny, but the concept of constant is new in javascript.
 `const` means that the variable can’t be reassigned. (Not to be confused with immutable values. Unlike true immutable datatypes such as those produced by Immutable.js and Mori, a `const` object can have properties mutated.)
-
+```
 const PI = Math.PI;
-
+```
 This declaration creates a constant that can be either global or local to the function in which it is declared. An initializer for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).
-
-const PI = Math.PI;Strings in JavaScript was kind of limited, lacking the capabilities one might expect coming from Ruby. 
-ES6 Template Literals, fundamentally change that. They can be used for:
-
-1. String Interpolation
-2. Embeded expressions
-3. Multiline Strings (without any hacks)
-4. String formatting
-5. String tagging for safe HTML escaping, logalization etc.
-
-Here's an example of String interpolation:
-
 ```
-var greet = function(name) {
- console.log(`Hello ${name}`);  // just like ruby #{}
-}
-
-greet("josim"); // prints "Hello josim"
-```
-
-https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=var%20greet%20%3D%20function%28name%29%20{%0A%20console.log%28%60Hello%20%24{name}%60%29%3B%0A}%0A%0Agreet%28%22josim%22%29%3B
-
-Example of multiline strings:
-
-```
-let x = `string text line 1
-string text line 2`;
-
-console.log(x);
-```
-
-will actually produce the code:
-
-```
-var x = "string text line 1\nstring text line 2";
-console.log(x);
-```
-
-and output:
-
-```
-string text line 1 
-string text line 2
-```
-
-https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=let%20x%20%3D%20%60string%20text%20line%201%0Astring%20text%20line%202%60%3B%0A%0Aconsole.log%28x%29%3B
-
-For detail explanation, read this article by Addy Osmani
-https://developers.google.com/web/updates/2015/01/ES6-Template-Strings?hl=en
-
-```
+const PI = Math.PI;
 PI = 100; // will raise error, "PI" is read-only
 ```
-
 https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=const%20PI%20%3D%20Math.PI%3B%0Aconst%20PI%20%3D%20100%3B%0Aconsole.log%28PI%29%3B
 
 Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
-
 ```
 const PI = Math.PI;
-const PI = 1010101; // will raile error, Duplicate declaration "PI"
+const PI = 1010101; // will raise error, Duplicate declaration "PI"
 ```
-
 https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=const%20PI%20%3D%20Math.PI%3B%0Aconst%20PI%20%3D%20100%3B%0Aconsole.log(PI)%3B
 
 Template Literals
@@ -158,13 +119,13 @@ Template Literals
 
 Strings in JavaScript was kind of limited, lacking the capabilities one might expect coming from Ruby. 
 ES6 Template Literals, fundamentally change that. They can be used for:
-
+```
 1. String Interpolation
 2. Embeded expressions
 3. Multiline Strings (without any hacks)
 4. String formatting
 5. String tagging for safe HTML escaping, logalization etc.
-
+```
 Here's an example of String interpolation:
 
 ```
