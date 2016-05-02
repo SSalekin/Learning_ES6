@@ -63,7 +63,11 @@ if(true) {
 console.log(name);
 ```
 
-and print "Sodrul", "JOSIM"
+and print 
+```
+Sodrul
+JOSIM
+```
 
 https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=let%20name%20%3D%20%22JOSIM%22%3B%0A%0Aif(true)%20%7B%20%0A%20%20let%20name%20%3D%20%22Sodrul%22%3B%20%0A%20%20console.log(name)%3B%20%0A%7D%3B%0A%0Aconsole.log(name)%3B
 
