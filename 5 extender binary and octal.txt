@@ -1,0 +1,9 @@
+You now have direct support for safe binary and octal literals in ES6
+
+0b10 //  2 (binary)
+0o12 // 10 (octal)
+
+which is pretty and more consice than what you needed to do in previous versions:
+
+parseInt("10", 2) //  2
+parseInt("12", 8) // 10

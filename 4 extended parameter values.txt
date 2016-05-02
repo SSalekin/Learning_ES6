@@ -1,0 +1,22 @@
+In ES6 you can declare default values of your parameters very easily.
+
+function f (x, y = 2, z = 3) { 
+  return x + y + z 
+}; 
+
+f(1) // 6  (1 + 2 + 3)
+
+which was a bit tedious in previous JS versions,
+
+function f (x, y, z) { 
+  if (y === undefined) { 
+    y = 7; 
+  }
+  if (z === undefined) {
+    z = 42; 
+  }
+  return x + y + z; 
+};
+
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=function%20f%20%28x%2C%20y%20%3D%202%2C%20z%20%3D%203%29%20{%20%0A%20%20return%20x%20%2B%20y%20%2B%20z%20%0A}%3B%20%0A%0Aconsole.log%28f%281%29%29%3B

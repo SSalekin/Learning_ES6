@@ -1,0 +1,43 @@
+The most fun feature of ES6 yet is the arrow function. An arrow function expression has a shorter syntax compared to function expressions.
+
+let numbers = [1,2,3,4,5,6,7];
+let squared = numbers.map(v => v*v); // [1,4,9,16,25,36,49]
+
+which makes the code concise and elegant. Trying to achieve the same with previous language version whould be like, 
+
+
+var numbers = [1, 2, 3, 4, 5, 6, 7];
+var squared = numbers.map(function (v) {
+  return v * v;
+});
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=let%20numbers%20%3D%20[1%2C2%2C3%2C4%2C5%2C6%2C7]%3B%0A%0Alet%20squared%20%3D%20numbers.map%28v%20%3D%3E%20v*v%20%29%3B%0A%0Aconsole.log%28squared%29%3B
+
+If a function has multiple parameters, it can be written as
+
+var multiply = (x, y) => x*y;
+multiply(2,3); // 6
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=var%20multiply%20%3D%20%28x%2C%20y%29%20%3D%3E%20x*y%3B%0Aconsole.log%28multiply%282%2C3%29%29%3B
+
+Also, consider this example, which returns a JSON object after given the appropriate inputs.
+
+let setNameIdsEs6 = (id, name) => ({ id: id, name: name }); 
+
+
+which would look like this if tried in language prior ES6 
+
+var setNameIdsEs6 = function setNameIdsEs6(id, name) {
+  return { 
+    id: id, 
+    name: name 
+  };
+};
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=let%20setNameIdsEs6%20%3D%20%28id%2C%20name%29%20%3D%3E%20%28{%20id%3A%20id%2C%20name%3A%20name%20}%29%3B%20%0A%0Aconsole.log%28setNameIdsEs6%20%284%2C%20%22Kyle%22%29%29%3B
+
+
+One thing to note though, Arrow functions will always be anonymous.
+
+To read more about them please visit, 
+https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions

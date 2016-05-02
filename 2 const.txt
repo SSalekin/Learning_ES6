@@ -1,0 +1,18 @@
+This might sound funny, but the concept of constant is new in javascript.
+`const` means that the variable can’t be reassigned. (Not to be confused with immutable values. Unlike true immutable datatypes such as those produced by Immutable.js and Mori, a `const` object can have properties mutated.)
+
+const PI = Math.PI;
+
+This declaration creates a constant that can be either global or local to the function in which it is declared. An initializer for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).
+
+const PI = Math.PI;
+PI = 100; // will raise error, "PI" is read-only
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=const%20PI%20%3D%20Math.PI%3B%0Aconst%20PI%20%3D%20100%3B%0Aconsole.log%28PI%29%3B
+
+Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
+
+const PI = Math.PI;
+const PI = 1010101; // will raile error, Duplicate declaration "PI"
+
+https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code=const%20PI%20%3D%20Math.PI%3B%0Aconst%20PI%20%3D%20100%3B%0Aconsole.log(PI)%3B
